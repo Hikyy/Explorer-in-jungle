@@ -17,6 +17,10 @@ for starting_node in array_starting_node:
 	chaque itération de cette boucle for permet de construire le chemin d'un explorateur.
 	pour chacun des explorateurs :
 		+ nous allons une liste contenant l'ensemble des sommets par lesquelles il est passé.
+		+ nous commençons par le noeud de départ de l'explorateur courrant
+		+ via le dictionnaire nous pouvons réccupérer le noeud aval du noeud courant
+		+ la construction se fait via un processus itératif qui s'arrête quand le noueud courant à l'array 
+		contenant le dernier sommet
 	"""
 	current_path = [starting_node]
 	while current_path[-1] not in array_arrival_node:
@@ -24,7 +28,14 @@ for starting_node in array_starting_node:
 		next_node = dict_upstream_downstream[current_node]
 
 		current_path.append(next_node)
+
 	print(current_path)
+
+
+
+
+
+
 
 
 
@@ -33,4 +44,3 @@ for starting_node in array_starting_node:
 # for upstream, downstream in dict_upstream_downstream.items():
 # 	print(upstream, downstream)
 
-print(dict_upstream_downstream["sommet_5"])
